@@ -3,8 +3,7 @@ var Regl = require('regl');
 var canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 
-canvas.width = 10;
-canvas.height = 10;
+canvas.width = canvas.height = 4096 * 2;
 
 var regl = Regl({
     canvas: canvas
