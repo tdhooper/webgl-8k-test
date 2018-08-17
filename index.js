@@ -1,9 +1,11 @@
 var Regl = require('regl');
+var FileSaver = require('file-saver');
 
 var canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 
 canvas.width = canvas.height = 4096 * 2;
+
 
 var regl = Regl({
     canvas: canvas
@@ -35,3 +37,7 @@ var draw = regl({
 });
 
 draw();
+
+canvas.toBlob(function(blob) {
+    FileSaver.saveAs(blob, 'webgk-8k-test.png');
+}.bind(this));
